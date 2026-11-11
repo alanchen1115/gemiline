@@ -86,7 +86,7 @@ def handle_message(event):
     elif working_status:
         try: 
             user_id = event.source.user_id
-            chat = chat_sessions.get(user_id) or client.chats.create(model="gemini-3-flash-preview", config=generation_config)
+            chat = chat_sessions.get(user_id) or client.chats.create(model="gemini-3.1-flash-lite", config=generation_config)
             chat_sessions[user_id] = chat
             # 取得使用者輸入的文字
             user_input = event.message.text
